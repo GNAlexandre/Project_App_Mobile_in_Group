@@ -1,4 +1,5 @@
 import {NavigationContainer } from '@react-navigation/native';
+<<<<<<< Updated upstream
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from "./Screens/HomeScreen";
 import React from 'react';
@@ -28,18 +29,36 @@ export default function App() {
             </Stack.Navigator>
         </NavigationContainer>
     );
+=======
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './Screens/HomeScreen';
+//import LoginPage from './Screens/LoginPage'
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+//const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
+
+function MyStack() {
+  return (
+    <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen} />
+
+    </Stack.Navigator>
+    </NavigationContainer>
+
+  );
+>>>>>>> Stashed changes
+}
+const  App= ()=> {
+
+    return (
+
+        <MyStack/>
+
+
+    );
 }
 
-
-
-
-
-
-const styles = StyleSheet.create({
-    container: {
-        width: 400,
-        height: 100,
-        marginBottom: 250,
-
-    },
-});
+export default App;
