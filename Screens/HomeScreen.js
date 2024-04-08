@@ -20,7 +20,7 @@ const addDocFunction = async () => {
 }
 
 
-export const HomeScreen: React.FC = () => {
+ const HomeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>My Todos</Text>
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
   }
 });
 
+export default HomeScreen;
 
 
 
