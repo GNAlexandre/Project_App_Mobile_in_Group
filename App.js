@@ -20,7 +20,6 @@ function MyStack() {
         <Stack.Screen name="Landing" component={LandingPage}/>
         <Stack.Screen name="Login" component={LoginPage}/>
         <Stack.Screen name="Register" component={RegisterPage}/>
-        <Stack.Screen name="Home" component={HomeScreen}/>
         <Stack.Screen name="GameSelection" component={GameSelectionPage}/>
         <Stack.Screen name="Game" component={GamePage}/>
         <Stack.Screen name="GameSettings" component={GameSettingsPage}/>
