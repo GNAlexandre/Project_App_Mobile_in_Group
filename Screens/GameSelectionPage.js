@@ -1,7 +1,8 @@
 import React from "react";
+import { View } from "react-native";
 const GameSelectionPage = () => {
   return (
-  <div>My Todos</div>
+  <View>My Todos</View>
   );
 }
 export default GameSelectionPage;
