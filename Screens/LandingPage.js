@@ -10,6 +10,7 @@ function LandingPage ({navigation}) {
         <View style={styles.container}>
             <AppButton title="Login" color="primary" onPress={() => navigation.navigate('Login')}/>
             <AppButton title="Register" color="secondary" onPress={() => navigation.navigate('Register')}/>
+            <AppButton title="HomeScreen" color="secondary" onPress={() => navigation.navigate('Home')}/>
         </View>
 
     )
