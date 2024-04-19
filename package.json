@@ -11,13 +11,18 @@
   "dependencies": {
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
-    "@react-navigation/stack": "^6.3.29",
-    "expo": "~50.0.11",
+    "@react-navigation/stack": "^6.3.27",
+    "expo": "~50.0.17",
     "expo-status-bar": "~1.11.1",
     "firebase": "^10.9.0",
+    "firebaseui": "^6.1.0",
     "formik": "^2.4.5",
     "react": "18.2.0",
-    "react-native": "0.73.4"
+    "react-native": "0.73.6",
+    "react-native-paper": "^5.12.3",
+    "react-native-svg": "^14.1.0",
+    "react-navigation": "^5.0.0",
+    "tictactoe-agent": "^2.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

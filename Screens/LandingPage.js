@@ -11,6 +11,7 @@ function LandingPage ({navigation}) {
             <AppButton title="Login" color="primary" onPress={() => navigation.navigate('Login')}/>
             <AppButton title="Register" color="secondary" onPress={() => navigation.navigate('Register')}/>
             <AppButton title="HomeScreen" color="secondary" onPress={() => navigation.navigate('Home')}/>
+            <AppButton title="TicTacToe" color="secondary" onPress={() => navigation.navigate('Game')}/>
         </View>
 
     )
