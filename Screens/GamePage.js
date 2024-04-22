@@ -3,7 +3,6 @@ import { View, StyleSheet } from 'react-native';
 import Game from '../components/GameScreen/Game';
 import Result from '../components/GameScreen/Result';
 import AppButton from "../components/Button";
-import {StackActions} from '@react-navigation/native';
 
 class GamePage extends Component {
     constructor(props) {
