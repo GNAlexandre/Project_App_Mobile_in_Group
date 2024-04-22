@@ -13,13 +13,7 @@ function RegisterPage({navigation}) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
-  //adresse
-    const [adresse, setAdresse] = useState();
-    const [ville, setVille] = useState();
-    const [codePostal, setCodePostal] = useState();
-    const [pays, setPays] = useState();
-    const [telephone, setTelephone] = useState();
-    const [dateNaissance, setDateNaissance] = useState();
+  const [telephone, setTelephone] = useState();
 
     const VerifyPassword = () => {
         if (password !== confirmPassword) {
@@ -37,12 +31,8 @@ function RegisterPage({navigation}) {
                 Nom: name,
                 Email: email,
                 Password: password,
-                Adresse: adresse,
-                Ville: ville,
-                CodePostal: codePostal,
-                Pays: pays,
                 Telephone: telephone,
-                DateNaissance: dateNaissance,
+
             });
             console.log("Document written with ID: ", docRef.id);
         } catch (e) {
@@ -54,12 +44,7 @@ function RegisterPage({navigation}) {
         setEmail("");
         setPassword("");
         setConfirmPassword("");
-        setAdresse("");
-        setVille("");
-        setCodePostal("");
-        setPays("");
         setTelephone("");
-        setDateNaissance("");
 
         //renvoie à la page de connexion
         navigation.navigate("LoginPage");
@@ -90,12 +75,8 @@ function RegisterPage({navigation}) {
         <AppTextInput placeholder="Email" icon="email" onChangeText={text => setEmail(text)} value={email}/>
         <AppTextInput placeholder="Password" icon="lock" onChangeText={text => setPassword(text)} value={password} secureTextEntry/>
         <AppTextInput placeholder="Confirm Password" icon="lock" onChangeText={text => setConfirmPassword(text)} value={confirmPassword} secureTextEntry/>
-        <AppTextInput placeholder="Adresse" icon="home" onChangeText={text => setAdresse(text)} value={adresse}/>
-        <AppTextInput placeholder="Ville" icon="city" onChangeText={text => setVille(text)} value={ville}/>
-        <AppTextInput placeholder="Code Postal" icon="numeric" onChangeText={text => setCodePostal(text)} value={codePostal}/>
-        <AppTextInput placeholder="Pays" icon="earth" onChangeText={text => setPays(text)} value={pays}/>
         <AppTextInput placeholder="Telephone" icon="phone" onChangeText={text => setTelephone(text)} value={telephone}/>
-        <AppTextInput placeholder="Date de Naissance" icon="calendar" onChangeText={text => setDateNaissance(text)} value={dateNaissance}/>
+
 
         </ScrollView>
 
