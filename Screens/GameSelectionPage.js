@@ -1,20 +1,23 @@
 import React from "react";
 import {FlatList, Text, View, StyleSheet} from "react-native";
 import {ListItem} from "../components/lists";
+import AppButton from "../components/Button";
 
 
-const GameSelectionPage = (navigation) => {
+
+function GameSelectionPage({navigation}){
   return (
-    <View style={ styles.container }>
+    <View>
       <Text>Game Selection Page</Text>
+
         <FlatList
             data={[
-                {id: 1, title: 'Tic Tac Toe',subTitle: '1 Joueur', image: require('../assets/Tic_tac_toe.svg.png')},
+                {id: 1, title: 'Tic Tac Toe',subTitle: '1 Joueur', image: require('../assets/Tic_tac_toe.svg.png'), onPress:()=> navigation.navigate("Game")},
                 {id: 2, title: 'Puissance 4',subTitle: '1 Joueur', image: require('../assets/1200px-Puissance4_01.svg.png')},
                 {id: 3, title: 'Les Echecs',subTitle: '2 Joueur', image: require('../assets/jeu-dechecs-en-marqueterie-reine_5000x.jpg')},
 
             ]}
-            renderItem={({item}) => <ListItem title={item.title} subTitle={item.subTitle} image={item.image} />}
+            renderItem={({item}) => <ListItem title={item.title} subTitle={item.subTitle} image={item.image} onPress={item.onPress} />}
 
         />
 
