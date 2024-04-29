@@ -1,9 +1,7 @@
-import react from 'react';
 import { initializeApp } from "firebase/app";
-import { getFirestore,initializeFirestore } from "firebase/firestore";
-
-
-
+import { getFirestore, initializeFirestore } from "firebase/firestore";
+import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCqr3SXKq-AqyuOc1NMJQKhgvDnBtn-CNg",
@@ -15,39 +13,20 @@ const firebaseConfig = {
     measurementId: "G-Q252R3XF5T"
 };
 
-/*
-export
-const firebaseConfig = {
-        apiKey:
-            "AIzaSyCoIFCilT-zttukFLkL25Wmm_ww-lW83p4",
-
-        authDomain:
-            "nectahr-51c5d.firebaseapp.com",
-
-        projectId:
-            "nectahr-51c5d",
-
-        storageBucket:
-            "nectahr-51c5d.appspot.com",
-
-        messagingSenderId:
-            "175101004332",
-
-        appId:
-            "1:175101004332:web:2d74dc26b02b850dd4df89"
-
-    };
-
-*/
-//const analytics = getAnalytics(app);
-
 const app = initializeApp(firebaseConfig);
-const db = initializeFirestore(app,{experimentalForceLongPolling: true});
 
+// Configuration de Firestore avec des paramètres spécifiques pour les environnements susceptibles de bloquer les WebSockets
+/*const db = initializeFirestore(app, {
+    experimentalForceLongPolling: true,
+});*/
+const db = getFirestore(app);
 
-export default db;
+// Configuration de l'authentification Firebase avec la persistance des données via AsyncStorage
+const auth = initializeAuth(app, {
+    persistence: getReactNativePersistence(AsyncStorage),
+});
 
-
+export { auth, db };
 
 
 

@@ -6,12 +6,13 @@ import AppTextInput from "../components/TextInput";
 import {addDoc, collection} from "firebase/firestore";
 import db from "../config/FireBaseConfiguration";
 import firebaseui from "firebase/compat";
+import { registerWithEmail} from '../components/Auth/Authentification';
 
 
 function RegisterPage({navigation}) {
   const [name, setName] = useState(); // [state, setState
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState();
   const [telephone, setTelephone] = useState();
 
@@ -72,16 +73,15 @@ function RegisterPage({navigation}) {
 
 
         <AppTextInput placeholder="Name" icon="account" onChangeText={text => setName(text)} value={name}/>
-        <AppTextInput placeholder="Email" icon="email" onChangeText={text => setEmail(text)} value={email}/>
-        <AppTextInput placeholder="Password" icon="lock" onChangeText={text => setPassword(text)} value={password} secureTextEntry/>
+        <AppTextInput placeholder="Email" icon="email"  onChangeText={setEmail} value={email}/>
+        <AppTextInput placeholder="Password" icon="lock" onChangeText={setPassword} secureTextEntry={true} value={password} />
         <AppTextInput placeholder="Confirm Password" icon="lock" onChangeText={text => setConfirmPassword(text)} value={confirmPassword} secureTextEntry/>
         <AppTextInput placeholder="Telephone" icon="phone" onChangeText={text => setTelephone(text)} value={telephone}/>
 
 
         </ScrollView>
 
-        <AppButton title="Register" onPress={() =>VerifyPassword()}/>
-
+        <AppButton title="Register" onPress={() => registerWithEmail(email, password, navigation, name)} />
 
 
       </View>

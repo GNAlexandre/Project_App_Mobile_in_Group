@@ -4,24 +4,26 @@ import AppButton from "../components/Button";
 import Text from "../components/Text";
 import AppForm from "../components/forms/Form";
 import AppTextInput from "../components/TextInput";
+import { loginWithEmail } from '../components/Auth/Authentification';
 
 
 
 import db from '../config/FireBaseConfiguration';
 
 function LoginPage ({navigation}) {
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Login Page</Text>
 
 
-            <AppTextInput placeholder="Email" icon="email" onChangeText={text => setEmail(text)} value={email}/>
-            <AppTextInput placeholder="Password" icon="lock" onChangeText={text => setPassword(text)} value={password} secureTextEntry/>
+            <AppTextInput placeholder="Email" icon="email"  onChangeText={setEmail} value={email}/>
+            <AppTextInput placeholder="Password" icon="lock" onChangeText={setPassword} secureTextEntry={true} value={password} />
 
-            <AppButton title="Login" onPress={() => navigation.navigate("GameSelection")}/>
+            <AppButton title="Login"  onPress={() => loginWithEmail(email, password,navigation)}/>
 
+            {/* <AppButton title="Login" onPress={() => navigation.navigate("GameSelection")}/> */}
 
 
         </View>

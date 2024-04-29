@@ -5,6 +5,7 @@ import 'react-native-gesture-handler';
 import db from '../config/FireBaseConfiguration';
 import {doc, setDoc, collection, addDoc, getFirestore} from "firebase/firestore";
 import {initializeApp} from "firebase/app";
+import { AuthComponent } from '../components/Auth/AuthComponent';
 
 
 // Add a new document in collection "cities"
@@ -25,6 +26,7 @@ const addDocFunction = async () => {
     <View style={styles.container}>
       <Text style={styles.title}>My Todos</Text>
       <Text style={styles.subTitle}>Welcome to my todo app</Text>
+      <AuthComponent/>
         <Button onPress={addDocFunction} title="Add a new document" />
     </View>
   );
