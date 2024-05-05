@@ -4,6 +4,7 @@ import Game from '../components/GameScreen/Game';
 import Result from '../components/GameScreen/Result';
 import AppButton from "../components/Button";
 import {NavBar} from "../components/NavBar";
+import Background from "../components/BackGround";
 
 class GamePage extends Component {
     constructor(props) {
@@ -34,22 +35,24 @@ class GamePage extends Component {
         return (
             <>
             <NavBar/>
-            <View style={styles.container}>
+                <Background>
+                    <View style={styles.container}>
 
-                <View pointerEvents={this.state.result ? 'none' : 'auto'}>
-                    <Game onFinish={this.handleGameFinish} />
-                </View>
-                {this.state.result && (
-                    <Result>
-                        result={this.state.result}
-                        <AppButton title="Restart Game" onPress={this.handleGameRestart}/>
-                        onRestartGameBtnClick={this.handleGameRestart}
-                    </Result>
+                        <View pointerEvents={this.state.result ? 'none' : 'auto'}>
+                            <Game onFinish={this.handleGameFinish} />
+                        </View>
+                        {this.state.result && (
+                            <Result>
+                                result={this.state.result}
+                                <AppButton title="Restart Game" onPress={this.handleGameRestart}/>
+                                onRestartGameBtnClick={this.handleGameRestart}
+                            </Result>
 
 
 
-                )}
-            </View>
+                        )}
+                    </View>
+                </Background>
             </>
         );
     }

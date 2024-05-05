@@ -1,6 +1,7 @@
 import React from "react";
 import {Image, ImageBackground, StyleSheet, Text, View} from "react-native";
 import AppButton from "../components/Button";
+import Background from "../components/BackGround";
 
 
 
@@ -8,16 +9,15 @@ import AppButton from "../components/Button";
 function LandingPage ({navigation}) {
     return (
         <>
+            <Background>
 
+                <View style={styles.container}>
+                    <Image source={require("../assets/Design-Studio-2024-05-05.png")} style={styles.image}/>
+                    <AppButton title="Login" color="primary" onPress={() => navigation.navigate('Login')}/>
+                    <AppButton title="Register" color="secondary" onPress={() => navigation.navigate('Register')}/>
 
-
-        <View style={styles.container}>
-            <Image source={require("../assets/Design-Studio-2024-05-05.png")} style={styles.image}/>
-            <AppButton title="Login" color="primary" onPress={() => navigation.navigate('Login')}/>
-            <AppButton title="Register" color="secondary" onPress={() => navigation.navigate('Register')}/>
-
-        </View>
-
+                </View>
+            </Background>
         </>
     )
 }

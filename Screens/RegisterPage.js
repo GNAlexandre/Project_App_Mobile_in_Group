@@ -3,10 +3,8 @@ import {StyleSheet, View, ScrollView, Image} from "react-native";
 import AppButton from "../components/Button";
 import Text from "../components/Text";
 import AppTextInput from "../components/TextInput";
-import {addDoc, collection} from "firebase/firestore";
-import db from "../config/FireBaseConfiguration";
-import firebaseui from "firebase/compat";
 import { registerWithEmail} from '../components/Auth/Authentification';
+import Background from "../components/BackGround";
 
 
 function RegisterPage({navigation}) {
@@ -16,76 +14,29 @@ function RegisterPage({navigation}) {
   const [confirmPassword, setConfirmPassword] = useState();
   const [telephone, setTelephone] = useState();
 
-    const VerifyPassword = () => {
-        if (password !== confirmPassword) {
-            alert("Les mots de passe ne correspondent pas");
-            return false;
-        }
-        else {
-            addDocFunction();
-        }
-    }
-
-    const addDocFunction = async () => {
-        try {
-            const docRef = await addDoc(collection(db, "Utilisateurs"), {
-                Nom: name,
-                Email: email,
-                Password: password,
-                Telephone: telephone,
-
-            });
-            console.log("Document written with ID: ", docRef.id);
-        } catch (e) {
-            console.error("Error adding document: ", e);
-        }
-
-        //clear les champs
-        setName("");
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-        setTelephone("");
-
-        //renvoie à la page de connexion
-        navigation.navigate("LoginPage");
-    }
-
-    /*
-    var firebase = require('firebase');
-    var firebaseui = require('firebaseui');
-
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-    ui.start('#firebaseui-auth-container', {
-        signInOptions: [
-            firebase.auth.EmailAuthProvider.PROVIDER_ID
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID
-        ],
-        // Other config options...
-    });
-    */
   return (
-      <View style={styles.container}>
-          <Image source={require("../assets/Design-Studio-2024-05-05.png")} style={styles.image}/>
-        <Text style={styles.title}>Register Page</Text>
-
-        <ScrollView>
+      <Background>
+          <View style={styles.container}>
+              <Image source={require("../assets/Design-Studio-2024-05-05.png")} style={styles.image}/>
 
 
-        <AppTextInput placeholder="Name" icon="account" onChangeText={text => setName(text)} value={name}/>
-        <AppTextInput placeholder="Email" icon="email"  onChangeText={setEmail} value={email}/>
-        <AppTextInput placeholder="Password" icon="lock" onChangeText={setPassword} secureTextEntry={true} value={password} />
-        <AppTextInput placeholder="Confirm Password" icon="lock" onChangeText={text => setConfirmPassword(text)} value={confirmPassword} secureTextEntry/>
-        <AppTextInput placeholder="Telephone" icon="phone" onChangeText={text => setTelephone(text)} value={telephone}/>
+            <ScrollView>
 
 
-        </ScrollView>
+            <AppTextInput placeholder="Name" icon="account" onChangeText={text => setName(text)} value={name}/>
+            <AppTextInput placeholder="Email" icon="email"  onChangeText={setEmail} value={email}/>
+            <AppTextInput placeholder="Password" icon="lock" onChangeText={setPassword} secureTextEntry={true} value={password} />
+            <AppTextInput placeholder="Confirm Password" icon="lock" onChangeText={text => setConfirmPassword(text)} value={confirmPassword} secureTextEntry/>
+            <AppTextInput placeholder="Telephone" icon="phone" onChangeText={text => setTelephone(text)} value={telephone}/>
 
-        <AppButton title="Register" onPress={() => registerWithEmail(email, password, navigation, name)} />
+
+            </ScrollView>
+
+            <AppButton title="Register" onPress={() => registerWithEmail(email, password, navigation, name)} />
 
 
-      </View>
+          </View>
+      </Background>
   );
 }
 
