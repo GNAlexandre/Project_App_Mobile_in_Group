@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {StyleSheet, View, ScrollView} from "react-native";
+import {StyleSheet, View, ScrollView, Image} from "react-native";
 import AppButton from "../components/Button";
 import Text from "../components/Text";
 import AppTextInput from "../components/TextInput";
@@ -67,6 +67,7 @@ function RegisterPage({navigation}) {
     */
   return (
       <View style={styles.container}>
+          <Image source={require("../assets/Design-Studio-2024-05-05.png")} style={styles.image}/>
         <Text style={styles.title}>Register Page</Text>
 
         <ScrollView>
@@ -101,6 +102,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: "center",
   },
+    image: {
+        width: 150,
+        height: 150,
+        //centrer l'image
+        alignSelf: "center",
+        //arrondir l'image
+        borderRadius: 100,
+        marginBottom: 50,
+
+    },
 
 
 });

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {StyleSheet, View} from "react-native";
+import {Image, StyleSheet, View} from "react-native";
 import AppButton from "../components/Button";
 import Text from "../components/Text";
 import AppForm from "../components/forms/Form";
@@ -14,8 +14,11 @@ function LoginPage ({navigation}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     return (
+        <>
         <View style={styles.container}>
-            <Text style={styles.title}>Login Page</Text>
+            <Image source={require("../assets/Design-Studio-2024-05-05.png")} style={styles.image}/>
+
+            <Text style={styles.title}>Page de Connexion</Text>
 
 
             <AppTextInput placeholder="Email" icon="email"  onChangeText={setEmail} value={email}/>
@@ -27,6 +30,7 @@ function LoginPage ({navigation}) {
 
 
         </View>
+    </>
     );
 }
 
@@ -41,6 +45,15 @@ const styles = StyleSheet.create({
         fontSize: 24,
         marginBottom: 20,
         textAlign: "center",
+    },
+    image: {
+        width: 150,
+        height: 150,
+        //centrer l'image
+        alignSelf: "center",
+        //arrondir l'image
+        borderRadius: 100,
+
     },
 });
 

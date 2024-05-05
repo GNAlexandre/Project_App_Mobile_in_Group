@@ -1,7 +1,13 @@
 import React from "react";
+import {Text} from "react-native";
+import {NavBar} from "../components/NavBar";
 const GameSettingsPage = () => {
   return (
-  <div>My Todos</div>
+      <>
+        <NavBar/>
+        <Text>My todo</Text>
+      </>
+
   );
 }
 export default GameSettingsPage;

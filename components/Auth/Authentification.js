@@ -53,7 +53,7 @@ const loginWithEmail = async (email, password, navigation) => {
     else {
       console.log("No such document!");
     }
-    navigation.navigate("Home");
+    navigation.navigate("GameSelection");
 
 
   } catch (error) {

@@ -4,7 +4,7 @@ import 'react-native-gesture-handler';
 
 import db from '../config/FireBaseConfiguration';
 import {doc, setDoc, collection, addDoc, getFirestore} from "firebase/firestore";
-import {initializeApp} from "firebase/app";
+
 import { AuthComponent } from '../components/Auth/AuthComponent';
 
 
