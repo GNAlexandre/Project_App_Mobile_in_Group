@@ -14,18 +14,20 @@ export default class Result extends Component {
         return 'AI won the game';
       case DRAW:
         return 'Draw';
+      default:
+        return '';
     }
   }
   render() {
     const { onRestartGameBtnClick } = this.props;
 
     return (
-      <View>
-        <Text style={styles.result}>{this._getResultMessage()}</Text>
-        <TouchableOpacity onPress={onRestartGameBtnClick}>
-          <Text style={styles.instructions}>Touch here to play again</Text>
-        </TouchableOpacity>
-      </View>
+        <View>
+          <Text style={styles.result}>{this._getResultMessage()}</Text>
+          <TouchableOpacity onPress={onRestartGameBtnClick}>
+            <Text style={styles.instructions}>Touch here to play again</Text>
+          </TouchableOpacity>
+        </View>
     );
   }
 }

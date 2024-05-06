@@ -15,13 +15,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-// Configuration de Firestore avec des paramètres spécifiques pour les environnements susceptibles de bloquer les WebSockets
-/*const db = initializeFirestore(app, {
-    experimentalForceLongPolling: true,
-});*/
+
 const db = getFirestore(app);
 
-// Configuration de l'authentification Firebase avec la persistance des données via AsyncStorage
 const auth = initializeAuth(app, {
     persistence: getReactNativePersistence(AsyncStorage),
 });

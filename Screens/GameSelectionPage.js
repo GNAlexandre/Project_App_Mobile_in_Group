@@ -3,7 +3,7 @@ import {FlatList, Text, View, StyleSheet, Alert} from "react-native";
 import {ListItem} from "../components/lists";
 import AppButton from "../components/Button";
 import {NavBar} from "../components/NavBar";
-import Background from "../components/BackGround";
+import Background from "../components/Background";
 
 
 

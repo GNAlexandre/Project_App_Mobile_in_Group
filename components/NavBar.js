@@ -6,7 +6,7 @@ const NavBar = () => {
     const navigation = useNavigation();
     return (
         <View style={styles.navBar}>
-            <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("GameSettings")}>
+            <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("ProfilePage")}>
                 <Text style={styles.navText}>Profil</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("GameSelection")}>
@@ -14,7 +14,9 @@ const NavBar = () => {
             </TouchableOpacity>
             <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("Landing")}>
                 <Text style={styles.navText}>Déconnexion</Text>
-
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("RankingPage")}>
+                <Text style={styles.navText}>Classement</Text>
             </TouchableOpacity>
         </View>
     );

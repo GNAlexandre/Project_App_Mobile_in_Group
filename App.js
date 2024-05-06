@@ -1,12 +1,12 @@
 import {NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './Screens/HomeScreen';
 import LoginPage from "./Screens/LoginPage";
 import LandingPage from "./Screens/LandingPage";
 import RegisterPage from "./Screens/RegisterPage";
 import GameSelectionPage from "./Screens/GameSelectionPage";
-import GamePage from "./Screens/GamePage";
-import GameSettingsPage from "./Screens/GameSettingsPage";
+import TicTacToeGamePage from "./Screens/TicTacToeGamePage";
+import ProfilePage from "./Screens/ProfilePage";
+import RankingPage  from "./Screens/RankingPage";
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -19,11 +19,12 @@ function MyStack() {
         <Stack.Screen name="Landing" component={LandingPage}/>
         <Stack.Screen name="Login" component={LoginPage}/>
         <Stack.Screen name="Register" component={RegisterPage}/>
-        <Stack.Screen name="Home" component={HomeScreen}/>
         <Stack.Screen name="GameSelection" component={GameSelectionPage}/>
-        <Stack.Screen name="Game" component={GamePage}/>
-        <Stack.Screen name="GameSettings" component={GameSettingsPage}/>
-        </Stack.Navigator>
+        <Stack.Screen name="Game" component={TicTacToeGamePage}/>
+        <Stack.Screen name="ProfilePage" component={ProfilePage}/>
+        <Stack.Screen name="RankingPage" component={RankingPage}/>
+
+    </Stack.Navigator>
     </NavigationContainer>
 
   );

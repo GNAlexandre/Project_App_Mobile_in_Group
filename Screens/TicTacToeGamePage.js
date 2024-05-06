@@ -4,15 +4,15 @@ import Game from '../components/GameScreen/Game';
 import Result from '../components/GameScreen/Result';
 import AppButton from "../components/Button";
 import {NavBar} from "../components/NavBar";
-import Background from "../components/BackGround";
+import Background from "../components/Background";
 
-class GamePage extends Component {
+class TicTacToeGamePage extends Component {
     constructor(props) {
         super(props);
 
-
         this.state = {
             result: null,
+            gameKey: 1,
         };
     }
 
@@ -21,35 +21,31 @@ class GamePage extends Component {
     };
 
     handleGameRestart = () => {
-        //this.setState({ result: null });
+        console.log("you did it")
+        this.setState({ result: null,
+            gameKey: this.state.gameKey + 1,
+        });
         console.log(this.state.result);
+        this// Incrémentation de la clé
 
         const { navigation } = this.props;
-        navigation.navigate({ routeName: 'Game' });
+        navigation.navigate('Game');
     };
-
-
-
 
     render() {
         return (
             <>
-            <NavBar/>
+                <NavBar/>
                 <Background>
                     <View style={styles.container}>
-
                         <View pointerEvents={this.state.result ? 'none' : 'auto'}>
-                            <Game onFinish={this.handleGameFinish} />
+                            <Game key={this.state.gameKey} onFinish={this.handleGameFinish} />
                         </View>
                         {this.state.result && (
-                            <Result>
+                            <Result
                                 result={this.state.result}
-                                <AppButton title="Restart Game" onPress={this.handleGameRestart}/>
                                 onRestartGameBtnClick={this.handleGameRestart}
-                            </Result>
-
-
-
+                            />
                         )}
                     </View>
                 </Background>
@@ -66,4 +62,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default GamePage;
+export default TicTacToeGamePage;
