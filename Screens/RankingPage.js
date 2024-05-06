@@ -2,15 +2,17 @@ import React from "react";
 import {FlatList, Text, View, StyleSheet, StatusBar} from "react-native";
 import {ListItem} from "../components/Ranklists";
 import AppButton from "../components/Button";
+import {NavBar} from "../components/NavBar";
 
 
 
 function RankingPage({ navigation }) {
     return (
         <View style={styles.container}>
+            <NavBar/>
+
             <StatusBar translucent={true} backgroundColor="transparent" barStyle="light-content" />
 
-            <Text style={styles.title}>Ranking Page</Text>
             <FlatList
                 data={[
                     { id: 1, title: 'Jean', subTitle: '1',score: 100, image: require('../assets/Tic_tac_toe.svg.png') },
