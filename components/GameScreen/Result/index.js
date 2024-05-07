@@ -37,9 +37,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     margin: 18,
     textAlign: 'center',
+    color: 'white',
   },
   instructions: {
     textAlign: 'center',
-    color: 'grey',
+    color: 'yellow',
   },
 });

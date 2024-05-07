@@ -4,6 +4,7 @@ import {ListItem} from "../components/lists";
 import AppButton from "../components/Button";
 import {NavBar} from "../components/NavBar";
 import Background from "../components/Background";
+import {TopNavBar} from "../components/TopNavBar";
 
 
 
@@ -17,8 +18,8 @@ function GameSelectionPage({navigation}){
 
   return (
       <>
-          <NavBar/>
               <Background>
+                  <TopNavBar/>
             <View>
                 <FlatList style={styles.flatlsit}
                     data={[
@@ -33,7 +34,9 @@ function GameSelectionPage({navigation}){
 
 
             </View>
-          </Background>
+                  <NavBar/>
+
+              </Background>
     </>
   );
 }
